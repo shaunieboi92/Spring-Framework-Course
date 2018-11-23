@@ -15,19 +15,24 @@ public class myApp {
 		//myTestPackage is now stored in the class path instead of external to src hence change to ClassPathXmlApplicationContext
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("myTestPackage/appContext.xml");
 		
-		Fruit myFruit = appContext.getBean("fruit", Fruit.class);
-		//another way of writing is via kiash, or dont write kiash(Vegetable) also can
-		Vegetable myVegetable = (Vegetable)appContext.getBean("vegetable", Vegetable.class);
-		
-		
-		//general format
-		//ClassName varName = appContext.getBean("appContext id", className.class);
-
+//		Fruit myFruit = appContext.getBean("fruit", Fruit.class);
+//		//another way of writing is via kiash, or dont write kiash(Vegetable) also can
+//		Vegetable myVegetable = (Vegetable)appContext.getBean("vegetable", Vegetable.class);
+//		
+//		
+//		
+//		//general format
+//		//ClassName varName = appContext.getBean("appContext id", className.class);
+//
 		Fruit myOtherFruit = appContext.getBean("fruitwithName", Fruit.class);
 		
-		System.out.println(myFruit.talkAboutYourSelf());
-		System.out.println(myVegetable.talkAboutYourSelf());
+		//collection type
+		Fruit myMultipleFruit = appContext.getBean("fruitWithListAndMap", Fruit.class);
+
+//		System.out.println(myFruit.talkAboutYourSelf());
+//		System.out.println(myVegetable.talkAboutYourSelf());
 		System.out.println(myOtherFruit.talkAboutYourSelf());
+		System.out.println(myMultipleFruit.talkAboutYourSelf());
 
 		//close spring framework
 		
