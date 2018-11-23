@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "fruit" class = "mySimpleSpringApp.Fruit"></bean>
+
+	<bean id = "fruitwithName" class = "mySimpleSpringApp.Fruit">
+		<constructor-arg index ="0" value = "Apple"/>
+		<!-- constructor-arg index= "0" value = "XXXX" >points to an arugment in Fruti constructor , since it is
+		index 0, hence it will be pointing to String pName and setting the value to "XXX"-->
+	</bean>
+	<!-- for getting instances of fruit -->
+	<bean id = "vegetable" class = "mySimpleSpringApp.Vegetable"></bean>
+
+</beans>
