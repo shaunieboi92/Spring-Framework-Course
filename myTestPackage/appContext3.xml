@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<!-- here you see 	"xmlns:context="http://www.springframework.org/schema/context" being set up for you for context namespace
+	 then we set the property-placeholder pointer to the external property file-->
+	
+	<context:property-placeholder location = "myApp.properties"/>
+	
+	<bean id = "fruit" class = "mySimpleSpringApp3wExternalProptyFile.Fruit"></bean>
+
+	<bean id = "vegetable" class = "mySimpleSpringApp3wExternalProptyFile.Vegetable"></bean>
+	
+	<bean id = "externalFruit" class ="mySimpleSpringApp3wExternalProptyFile.Fruit">
+		<!-- standard format is property name ="XXX" value = "${AAA}" where AAA points to the definition or property name IN the property file-->
+		<property name = "definition" value ="${def-fruit}"/>
+	</bean>
+	<!-- use external property files -->
+</beans>
