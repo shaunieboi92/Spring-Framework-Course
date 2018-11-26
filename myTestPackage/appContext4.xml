@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "dairy" class = "FoodInnerandOuterBean.Dairy"></bean>
+	<bean id = "meat" class = "FoodInnerandOuterBean.Meat"></bean>
+	<bean id = "grain" class = "FoodInnerandOuterBean.Grain"></bean>
+	<bean id = "vegetable" class = "FoodInnerandOuterBean.Vegetable"></bean>
+	<bean id = "fruit" class = "FoodInnerandOuterBean.Fruit"></bean>
+	
+	<!-- use constructor injection -->
+	<bean id = "mealwInj" class = "FoodInnerandOuterBean.MealwConstructorInjection">
+		
+		<constructor-arg index ="0" ref ="fruit"/>
+		<constructor-arg index ="1" ref ="dairy"/>
+		<constructor-arg index ="2" ref ="grain"/>
+		<constructor-arg index ="3" ref ="meat"/>
+		<constructor-arg index ="4" ref ="vegetable"/>
+	</bean>
+	
+	<!-- Another way of rewriting the above is as such:
+	instead of using index, remembering position, we can use
+	the name convention instead, the name of the variable,
+	corresponds to the var name within the constructor in Meal constructor with its 
+	arguments
+	public Meal(Fruit f, Dairy d, Grain g, Meat m, Vegetable v) {
+		this.fruit = f;
+		this.dairy = d;
+		this.grain = g;
+		this.meat = m;
+		this.veg = v;
+	}
+	 <bean id = "meal" class = FoodInnerandOuterBean.Meal">
+		
+		<constructor-arg name ="f" ref ="fruit"/>
+		<constructor-arg name ="d" ref ="dairy"/>
+		<constructor-arg name ="g" ref ="grain"/>
+		<constructor-arg name ="m" ref ="meat"/>
+		<constructor-arg name ="v" ref ="vegetable"/>
+
+	</bean>-->
+	
+
+
+</beans>
