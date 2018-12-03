@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "dairy" class = "AutoWire.Dairy"></bean>
+	<bean id = "meat" class = "AutoWire.Meat"></bean>
+	<bean id = "grain" class = "AutoWire.Grain"></bean>
+	<bean id = "fruit" class = "AutoWire.Fruit"></bean>
+	<bean id = "vegetable" class = "AutoWire.Vegetable"></bean>
+	
+	
+	<!-- normal bean instance here -->
+	<bean id = "meal" class = "AutoWire.MealwAutoWirebyType">
+	<!-- originally manually set up the properties for Autowire.meal -->
+		<property name ="meat" ref ="meat"></property>
+		<property name ="fruit" ref ="fruit"></property>
+		<property name ="vegetable" ref ="vegetable"></property>
+		<property name ="dairy" ref ="dairy"></property>
+		<property name ="grain" ref ="grain"></property>
+		
+	</bean>
+	
+	<!-- here instead of creating an instance of a meal without any autowriring, we 
+	are using one with autowiring, spring is going to go through the properties in Meal.class
+	,see the setters-->
+	<bean id = "mealAutoWired" class = "AutoWire.MealwAutoWirebyType" autowire = "byType"/>
+
+
+</beans>
