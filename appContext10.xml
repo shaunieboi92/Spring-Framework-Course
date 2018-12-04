@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id = "fruit" class = "AutoWireValueAnnotation.Fruit">
+		<!-- for comparison -->
+		<!-- this is based on XML config rather than n -->
+		<property name="description" value = "Hi I am a fruit, my description is based on XML config"></property>
+	</bean>
+	
+	<bean id = "anotherFruit" class = "AutoWireValueAnnotation.Fruit"/>
+	
+	
+
+
+</beans>
