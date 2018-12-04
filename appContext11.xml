@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id = "fruit" class = "Required.Fruit">
+		<!-- here we set the property description -->
+		
+		<!-- first we test with property, it should show "Hi, I am a fruit 
+		<property name = "description" value = "Hi, I am a fruit"/>, next we comment out the property
+		it will show no description set-->
+		<!-- next we set Required annotation, to force the application to require this property to be given
+		before even running the application, so that it breaks completely if it is not set. -->
+	</bean>		
+
+
+
+</beans>
