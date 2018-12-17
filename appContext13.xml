@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	
+
+	
+	
+	<!-- original setting of init and destroy method in xml file -->	
+	<bean id = "fruit" scope = "singleton" class = "InitDestroyAnnotation.Fruit"
+		
+		<!-- set property and description -->
+		<property name = "description" value = "Hi, I am a fruit"/>
+	</bean>
+	
+	<!-- now replaced with inti and destroy annotation -->
+	
+	
+
+
+</beans>
