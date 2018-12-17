@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	<!-- for both the tire and engine interfaces, the small and big engines class that are implementing it needs to state explicitly, so that it borrow
+	the functionality from the interface -->
+	<bean id = "smallTire" class = "resourceAnnotation.SmallTire"></bean>
+	<!--  <bean id = "bigTire" class = "resourceAnnotation.BigTire"></bean>	-->
+	<bean id = "fourCyl" class = "resourceAnnotation.FourCylinderEngine"></bean>
+	
+	<bean id = "familyCar" class = "resourceAnnotation.FamilyCar"></bean>
+	
+	
+	
+	
+	
+
+
+</beans>
