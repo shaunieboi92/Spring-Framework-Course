@@ -9,7 +9,8 @@ public class myApp {
 		ApplicationContext appContextfourteen = new ClassPathXmlApplicationContext("myTestPackage/appContext14.xml");
 		FamilyCar myFamilyCar = appContextfourteen.getBean("familyCar", FamilyCar.class);
 		System.out.println(myFamilyCar.getCarDescription());
-		
+		//if simply run with declaring all the beans that implements Tire and Engine respectively, there is ambiguity
+		 //No qualifying bean of type [resourceAnnotation.Engine] is defined: expected single matching bean but found 2: fourCyl,sixCyl
 		((ClassPathXmlApplicationContext)appContextfourteen).close();
 	}
 	

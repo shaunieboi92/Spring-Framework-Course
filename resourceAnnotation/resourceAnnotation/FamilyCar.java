@@ -5,26 +5,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class FamilyCar {
 	//do autowiring
-	
+	//@Resource has a name attribute that is able to remove ambiguity that points to the same interface
+	//we have to set the (name = "XXXX") to the bean id in the appContext that we want to point to
 //	@Autowired
-	@Resource
+	@Resource(name = "bigTire")
 	private Tire frontLeft;
 	
 //	@Autowired
-	@Resource
-
+	@Resource(name = "bigTire")
 	private Tire frontRight;
 	
 //	@Autowired
-	@Resource
+	@Resource(name = "bigTire")
 	private Tire rearLeft;
 	
 //	@Autowired
-	@Resource
+	@Resource(name = "bigTire")
 	private Tire rearRight;
 	
 //	@Autowired
-	@Resource
+	@Resource(name = "sixCyl")
 	private Engine engineType;
 	
 	
