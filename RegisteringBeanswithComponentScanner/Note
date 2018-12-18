@@ -1,0 +1,2 @@
+The component scanner will reemove the need to
+manually/ explicitly defining the beans within the XML config file
